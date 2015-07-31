@@ -1,0 +1,31 @@
+#! /bin/tcsh
+#BSUB -J surfactant
+#BSUB -o o.%J
+#BSUB -e e.%J
+#BSUB -n 16
+#BSUB -W 200:00
+#BSUB -R "select[oc || hc || qc] span[hosts=1]"
+#BSUB -q santiso
+source /gpfs_share/santiso/SOFTWARE/env_setup/lammps_env.csh
+grep -m 1 'model name' /proc/cpuinfo
+which python
+
+setenv LAMMPS_SCRATCH /scratch/$LSB_JOBID
+mkdir $LAMMPS_SCRATCH
+
+cd $LAMMPS_SCRATCH
+
+echo $LS_SUBCWD
+pwd
+
+cp -rp $LS_SUBCWD/* .
+ls
+
+setenv nproc `echo $LSB_MCPU_HOSTS | cut -d " " -f2`
+echo $nproc
+mpiexec -n $nproc lmp_henry2 -var jobdir $LS_SUBCWD -in system_all.in > $LS_SUBCWD/tension_fraction.log
+echo $PATH 
+
+rm -rf xyz*  
+cp -rf * $LS_SUBCWD
+rm -rf $LAMMPS_SCRATCH

@@ -1,0 +1,37 @@
+#!/usr/bin/env python  
+
+import os
+
+#make folders to organize different sections of run
+os.system('mkdir run_scripts')
+os.system('mkdir production')
+os.system('mkdir equilibration')
+os.system('mkdir trim_system')
+
+os.system('rm rescale.p* run_scripts/.')
+os.system('rm def_surface.p* run_scripts/.')
+os.system('rm execute_trim.p* run_scripts/.')
+os.system('rm trim_system.p* run_scripts/.')
+os.system('mv input_file.txt run_scripts/.')
+os.system('mv run_lammps run_scripts/.')
+os.system('rm readDCD.* run_scripts/.')
+os.system('rm surf_mie.table run_scripts/.')
+os.system('mv *trim* trim_system/.')
+os.system('mv *.lt trim_system/.')
+os.system('rm o.* production/.')
+os.system('rm e.* production/.')
+os.system('mv variables.* run_scripts/.')
+os.system('mv system.data equilibration/.')
+os.system('rm *equil.dcd equilibration/.')
+os.system('rm *equil* equilibration/.')
+os.system('mv prod* production/.')
+os.system('mv *log* production/.')
+os.system('mv PF.py production/.')
+os.system('mv dE.txt production/.')
+os.system('rm temp_vol_frac.txt production/.')
+os.system('mv vol_frac.txt production/.')
+os.system('mv Test_Area.py production/.')
+os.system('rm system.restart* production/.')
+os.system('mv out_file.txt equilibration/.')
+os.system('mv minimized.data equilibration/.')
+os.system('rm clean_folder.py run_scripts/.')

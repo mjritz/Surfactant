@@ -1,0 +1,12 @@
+import "wat.lt" 
+import "surf.lt" 
+
+write_once("Data Boundary") {
+-30.000000      30.000000 xlo xhi
+-30.000000      30.000000 ylo yhi
+-300.00000      300.00000 zlo zhi
+} 
+
+wat = new Wat [4800] 
+
+surf = new Surf [2]

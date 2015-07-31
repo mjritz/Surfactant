@@ -1,0 +1,9 @@
+Surfactant Scripts
+
+To run the scripts create the structure file, T for main tail, B for branches, and H for the head groups.
+
+Then modify the input_file.txt and copy to copied_files folder.
+
+Submit script: python src/execute.py structure.txt
+
+

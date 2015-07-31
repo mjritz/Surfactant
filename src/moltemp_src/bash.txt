@@ -1,0 +1,62 @@
+#bashrc
+# Used to create shortcuts for directories and applications
+#.bashrc automatically updates when logged in
+# No space between alias "string"=' '
+
+alias henry2='ssh mjritz@login.hpc.ncsu.edu'
+
+alias cthulhu='ssh mariah@cthulhu.che.ncsu.edu'
+
+alias transfer='sftp mjritz@login.hpc.ncsu.edu'
+
+alias transfer_lammps='sftp
+mjritz@login.hpc.ncsu.edu:/gpfs_share/santiso/mjritz/LAMMPS/Surfactant'
+
+alias transfer2='sftp mariah@cthulhu.che.ncsu.edu'
+
+alias reload='. ~/.profile'    
+
+# Applications                                                                                           
+alias truecrypt='/Applications/TrueCrypt.app/Contents/MacOS/TrueCrypt'                                   
+alias gnuplot='/Applications/Gnuplot.app/Contents/Resources/bin/gnuplot'                                  
+#alias vmd='open /Applications/VMD-1.9.1/'                                  
+alias vmd='/Applications/VMD\ 1.9.1.app/Contents/vmd/vmd_MACOSXX86'
+#alias babel='open /Applications/iBabel.app'
+alias babel='/usr/local/bin/babel'
+alias catdcd='/Applications/VMD\ 1.9.1.app/Contents/vmd/plugins/MACOSXX86/bin/catdcd4.0/catdcd'          
+alias sage='/Applications/sage/sage'                                                                     
+alias packmol='/Applications/packmol/packmol'                                                            
+alias moltemp='/Applications/moltemplate_2014-3-03/src/moltemplate.sh'
+alias doxygen='/Applications/Doxygen.app/Contents/Resources/doxygen'                                     
+alias fenics='source /Applications/FEniCS.app/Contents/Resources/share/fenics/fenics.conf'               
+alias clang++='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++'
+alias paraview='/Applications/paraview.app/Contents/MacOS/paraview'                                      
+alias molden='/Applications/molden/molden4_7'                                                            
+alias mopac='/opt/mopac/MOPAC2012.exe'                                                                   
+alias text='open /Applications/TextWrangler.app'
+                                                                                                         
+# Useful scripts                                                                                         
+alias range='/Volumes/Innsmouth/Scripts/utils/range'                                                     
+alias transpose='/Volumes/Innsmout/Scripts/utils/transpose'                                              
+alias findmax="awk 'BEGIN{max=-100000000}{if(\$1>max)max=\$1}END{print max}'"                            
+alias findmin="awk 'BEGIN{min=100000000}{if(\$1<min)min=\$1}END{print min}'"                             
+alias findavg="awk 'BEGIN{tot=0.0;cnt=0}{tot+=\$1;++cnt}END{print tot/cnt}'"                             
+alias findstdev="awk \                                                                                   
+'BEGIN{tot=0.0;totsq=0.0;cnt=0}{tot+=\$1;totsq+=\$1*\$1;++cnt}END{print \                                
+  sqrt((totsq/cnt-tot*tot/(cnt*cnt))*cnt/(cnt-1))}'"                                                     
+alias finderror="awk \                                                                                   
+'BEGIN{tot=0.0;totsq=0.0;cnt=0}{tot+=\$1;totsq+=\$1*\$1;++cnt}END{print \                                
+  1.95996398454*sqrt((totsq/cnt-tot*tot/(cnt*cnt))/(cnt-1))}'"                                           
+                                                                                                         
+# Gnuplot settings                                                                                       
+export GNUTERM=x11                                                                                       
+                                                                                                         
+# Terminal prompt                                                                                        
+export PS1="[\u@\h \W]$ "                                                                                
+                                                                                                         
+# Terminal colors                                                                                        
+export CLICOLOR=1                                                                                        
+#export LSCOLORS=ExFxCxDxBxegedabagacad                                                                  
+#export LSCOLORS=GxFxCxDxBxegedabagacad <- For black background 
+
+

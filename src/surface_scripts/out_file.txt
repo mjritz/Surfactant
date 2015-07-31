@@ -1,0 +1,7 @@
+-------------------------------------------------------------------
+
+lower interface: -41.000; upper interface: 39.500
+accepted surfactants 13.500 angstroms away from lower and upper interface
+started with: 420 surfactants; deleted: 175 surfactants
+-------------------------------------------------------------------
+

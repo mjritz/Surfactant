@@ -1,0 +1,24 @@
+Surfactant Scripts
+
+To run the scripts create the structure file, T for main tail, B for branches, and H for the head groups. The structure file can be names anything, for example "structure.txt"
+
+Then modify the input_file.txt and copy to copied_files folder.
+Things you may need to change:
+-bead_per_molecule 
+-bead_in_main_branch 
+-The height of the barrier (wall)
+-The height at which you erase surfactants (cutoff_distance)
+
+The files wat.lt, system.lt, mie_surf.lt and w_60xy80z.xyz have to be in the directory with the structure file and input file. All of the other run scripts are in the src directory.
+
+To submit script: python src/execute.py structure.txt
+-Creates .data file for LAMMPS using packmol and moltemplate and a few other scripts 
+-Creates new folders and copies files to that folder
+-Submits the job in the created folder
+**You will have to answer a couple questions that will help with the organization of the folders/files. 
+
+After running the command, you can go to the new folder and see that the job is running or you can use the command "bjobs". Once the job is complete all of the information you will need is in the folder. 
+
+You can watch the movie of the equilibration or production using the .dcd files and vmd. You will need to first creat a .psf file using the appropriate .data file. You can calculate the surface tension using the numbers output to dE.txt using the command "python Test_Area.py" and you can calculate the packing fraction using the numbers output to vol_frac.txt using the command "python PF.py"
+
+We can go over how both of these scripts work later. I can also show you another method for determining the packing fraction, but we will first have to download a program on your computer. 

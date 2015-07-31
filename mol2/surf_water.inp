@@ -1,0 +1,22 @@
+tolerance 3.700000
+filetype xyz
+output surf_water.xyz
+
+structure w_60xy80z.xyz
+  fixed 0. 0. 0. 0. 0. 0.
+end structure
+
+structure surf.xyz
+  resnumber 3
+  number 1
+  inside box -25.0 -25.0 45.0 25.0 25.0 149.0 
+  end atoms
+end structure
+
+structure surf.xyz
+  resnumber 3
+  number 1
+  inside box -25.0 -25.0 -149.0 25.0 25.0 -45.0 
+  end atoms
+end structure
+

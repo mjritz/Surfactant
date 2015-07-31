@@ -1,0 +1,31 @@
+                                                                                                 
+import "miesurf_ff.lt"                                                                                   
+
+Surf {                                                                                                   
+                                                                                                             
+  write('Data Atoms') {                                                                                  
+    $atom:CM1 $mol:. @atom:MieSurf/CM  0.00    0.0000    0.0000    0.0000
+    $atom:CM2 $mol:. @atom:MieSurf/CM  0.00    0.0000    0.0000    4.5000
+    $atom:CM3 $mol:. @atom:MieSurf/CM  0.00    0.0000    0.0000    9.0000
+    $atom:CM4 $mol:. @atom:MieSurf/CM  0.00    0.0000    0.0000   13.5000
+    $atom:OA1 $mol:. @atom:MieSurf/OA  0.00    0.0000    0.0000  18.0000
+    $atom:OA2 $mol:. @atom:MieSurf/OA  0.00    0.0000    0.0000  22.5000
+    $atom:CM5 $mol:. @atom:MieSurf/CM  0.00    0.0000   -9.0000    4.5000
+    $atom:CM6 $mol:. @atom:MieSurf/CM  0.00    0.0000   -4.5000    4.5000
+    $atom:CM7 $mol:. @atom:MieSurf/CM  0.00    0.0000    4.5000    4.5000
+    $atom:CM8 $mol:. @atom:MieSurf/CM  0.00    0.0000    9.0000    4.5000
+  }                                                                                                   
+                                                                                                         
+  write ('Data Bonds') {                                                                                 
+    $bond:bond1 @bond:MieSurf/CMCM $atom:CM1 $atom:CM2
+    $bond:bond2 @bond:MieSurf/CMCM $atom:CM2 $atom:CM3
+    $bond:bond3 @bond:MieSurf/CMCM $atom:CM3 $atom:CM4
+    $bond:bond4 @bond:MieSurf/CMOA $atom:CM4 $atom:OA1
+    $bond:bond5 @bond:MieSurf/OAOA $atom:OA1 $atom:OA2
+    $bond:bond6 @bond:MieSurf/CMCM $atom:CM5 $atom:CM6
+    $bond:bond7 @bond:MieSurf/CMCM $atom:CM6 $atom:CM2
+    $bond:bond8 @bond:MieSurf/CMCM $atom:CM2 $atom:CM7
+    $bond:bond9 @bond:MieSurf/CMCM $atom:CM7 $atom:CM8
+ }                                                                                                
+                                                                                                                     
+}
